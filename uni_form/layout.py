@@ -198,7 +198,8 @@ class MultiField(object):
 
     def render(self, form, form_style, context):
         if form.errors:
-            self.css_class += " error"
+            if self.fields in form.errors.keys():
+                self.css_class += " error"
 
         # We need to render fields using django-uni-form render_field so that MultiField can 
         # hold other Layout objects inside itself
