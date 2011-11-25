@@ -102,6 +102,7 @@ class FormHelper(object):
     form_tag = True
     form_error_title = None
     formset_error_title = None
+    form_show_errors = True
 
     def __init__(self):
         self.inputs = self.inputs[:]
@@ -175,6 +176,7 @@ class FormHelper(object):
         items['form_method'] = self.form_method.strip()
         items['form_tag'] = self.form_tag
         items['form_style'] = self.form_style.strip()
+        items['form_show_errors'] = self.form_show_errors
         
         if self.form_action:
             items['form_action'] = self.form_action.strip()
